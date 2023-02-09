@@ -6,20 +6,17 @@ sklad = {
   "2N7002": 97,
   "BC547C": 10
 }
-key = "BAV21"
-value = 54
 kod_soucastky = input("Zadejte kód součastky: ")
 pocet_kusu = int(input("Zadejte počet kusů: "))
 
 if kod_soucastky in sklad:
-  if pocet_kusu > value:
+  if sklad[kod_soucastky] < pocet_kusu:
     print("Na skladě není požadovaný počet kusů. Lze zakoupit pouze omezené mnnožství.")
     sklad.pop(kod_soucastky)
-    # print(sklad) - pro kontrolu
   else:
       print("Požadovaný počet kusů skladem.")
-      sklad[key] -= pocet_kusu
-      # print(sklad) - pro kontrolu
+      sklad[kod_soucastky] -= pocet_kusu
 else:
   print("Omlouváme se, součastka není skladem.")
 
+  # print(sklad) - pro kontrolu
