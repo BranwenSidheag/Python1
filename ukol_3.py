@@ -11,7 +11,6 @@ for key, value in body.items():
         print(key + ": Pass")
         body[key] = "Pass"
 
-print(body)
 
-with open("prospech.json", mode="w", encoding="utf-8") as soubor:
-    json.dump(body, soubor, ensure_ascii=False, indent=4)
+with open("prospech.json", mode="w", encoding="utf-8") as file:
+    json.dump(body, file)
